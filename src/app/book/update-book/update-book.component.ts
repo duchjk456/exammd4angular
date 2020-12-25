@@ -32,13 +32,15 @@ export class UpdateBookComponent implements OnInit {
   updateBook(): void {
     this.bookService.updateBooks(this.id, this.book).subscribe(data => {
       this.book = new Book();
+      alert('Update succsess!');
       this.gotoList();
-      console.log('fuck u');
     }, error => console.log(error));
   }
 
   gotoList(): void {
-    this.router.navigate(['/books']);
+    if (confirm('Thông tin bạn nhập sẽ không được lưu lại!')) {
+      this.router.navigate(['/books']);
+    }
   }
 }
 

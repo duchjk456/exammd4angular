@@ -17,19 +17,25 @@ export class CreateBookComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   save(): void {
     this.bookService.createBook(this.book).subscribe((data: any) => {
         this.book = new Book();
+        alert('Create succsess!');
         this.gotoList();
       },
       (error: any) => console.log(error));
   }
+
   onSubmit(): void {
     this.submitted = true;
     this.save();
   }
+
   gotoList(): void {
-    this.router.navigate(['/books']);
+    if (confirm('Thông tin bạn nhập sẽ không được lưu lại!')) {
+      this.router.navigate(['/books']);
+    }
   }
 
 }

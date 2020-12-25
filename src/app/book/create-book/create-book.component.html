@@ -16,7 +16,7 @@
       <br><br>
       <textarea style="width: 100%!important;" name="description" required [(ngModel)]="book.description" cols="30" rows="10"></textarea>
     </div>
-    <button type="submit" class="btn btn-success">Submit</button> | <a routerLink="/books" class="btn btn-warning" routerLinkActive="active">Cancel</a>
+    <button type="submit" class="btn btn-success">Submit</button> | <a class="btn btn-warning" (click)="gotoList()">Cancel</a>
   </form>
 </div>
 

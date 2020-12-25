@@ -13,7 +13,7 @@
       <label>Description</label>
       <textarea name="description" style="width: 100%!important;" cols="30" rows="10">{{book.description}}</textarea>
     </div>
-    <button type="submit" class="btn btn-success">Submit</button> | <a routerLink="/books" class="btn btn-warning" routerLinkActive="active">Cancel</a>
+    <button type="submit" class="btn btn-success">Submit</button> | <a class="btn btn-warning" (click)="gotoList()">Cancel</a>
   </form>
 </div>
 <div [hidden]="!submitted">
