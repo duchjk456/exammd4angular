@@ -1,0 +1,21 @@
+<h3>Update book</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="class">Title</label>
+      <input value="{{book.title}}" type="text" class="form-control" id="class" required [(ngModel)]="book.title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="phone">Author</label>
+      <input value="{{book.author}}" type="text" class="form-control" id="phone" required [(ngModel)]="book.author" name="author">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea name="description" style="width: 100%!important;" cols="30" rows="10">{{book.description}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button> | <a routerLink="/books" class="btn btn-warning" routerLinkActive="active">Cancel</a>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+</div>

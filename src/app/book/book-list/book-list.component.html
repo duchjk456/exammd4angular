@@ -1,0 +1,25 @@
+<div class="panel-body">
+  <a routerLink="/books/create" class="btn btn-primary" routerLinkActive="active">Create book</a>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books | async">
+      <td>{{book.id}}</td>
+      <td><a routerLink="/books/detail/{{book.id}}" class="nav-link" routerLinkActive="active">{{book.title}}</a></td>
+      <td>{{book.author}}</td>
+      <td>
+        <button (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button>
+        <button (click)="bookUpdate(book.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
