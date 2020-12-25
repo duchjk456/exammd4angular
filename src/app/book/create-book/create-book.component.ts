@@ -22,7 +22,7 @@ export class CreateBookComponent implements OnInit {
     this.bookService.createBook(this.book).subscribe((data: any) => {
         this.book = new Book();
         alert('Create succsess!');
-        this.gotoList();
+        this.router.navigate(['/books']);
       },
       (error: any) => console.log(error));
   }
